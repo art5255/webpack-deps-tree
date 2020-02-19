@@ -45,7 +45,17 @@ function processData(stats: WebpackStat) {
     const isExternalModule = (moduleId: ModuleId, reasonId: ModuleId): boolean => {
         const module = getModuleById(moduleId);
         const reason = getModuleById(reasonId);
-        return module.group.name !== reason.group.name;
+        const {
+            group: {
+                name: moduleGroupName = '',
+            } = {}
+        } = module || {};
+        const {
+            group: {
+                name: reasonGroupName = '',
+            } = {}
+        } = reason || {};
+        return moduleGroupName !== reasonGroupName;
     };
 
     // create module cache and normalise the shape

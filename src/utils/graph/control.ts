@@ -22,7 +22,7 @@ export function configureNodeDrag(tick: () => void) {
 }
 
 const minZoom = 0.2;
-const maxZoom = 1;
+const maxZoom = 10;
 const medZoom = (minZoom + maxZoom) / 2;
 const zoom = d3.behavior.zoom().scaleExtent([minZoom, maxZoom]);
 

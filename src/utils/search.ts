@@ -30,6 +30,9 @@ export function getHighlightedPathById(startId: ModuleId, getModuleById: GetModu
             highlightedNodes.push(id);
         },
         function getChildren(id: ModuleId): ModuleId[]{
+            if (!id || id === 'null') {
+                return [];
+            }
             var module = getModuleById(id);
             if (module.reasons.length) {
                 const reasonIds = module.reasons.map(r => r.moduleUid);
