@@ -9,7 +9,6 @@ Usually, we want to see next dependencies:
 Tool uses `stat.json` file, provided by `webpack`, to build dependency graph.
 So to get a visual representation of dependency graph:
 1. Run webpack build with saving stats file on disk. ie, `webpack --json > stats.json`.
-2. Go to [online version](https://restrry.github.io/webpack-deps-tree/static/).
 3. Upload generated `stats.json` file.
 
 Next version will have the option to be used as webpack plugin as well.
